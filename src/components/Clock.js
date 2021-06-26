@@ -1,5 +1,7 @@
 import React ,{useState ,useEffect}from 'react'
-import {Stack} from "@chakra-ui/react"
+import {Stack  ,Text } from "@chakra-ui/react"
+
+
 
 
 
@@ -17,27 +19,28 @@ const update =(event)=>{
     setSegundo(new Date().getSeconds() )
 }
 
+setInterval(update,1000)
 
 
- useEffect(() => {
-    setInterval(update,1000)
-    update()
- }, [])
- 
 
     return (
         <React.Fragment>
-            <Stack bg="gainsboro" p="3" borderWidth="5px " borderColor="black" direction="row" justify="center" minW="200px">
-              <Stack borderColor="black" borderWidth="1px ">
-                  <h2>{hora}</h2>
+            <Stack bg="gainsboro" p="3" borderWidth="2px" borderRadius="5px" borderColor="black" direction="row" justify="center" minW="150px" maxH="60px"  boxShadow="lg">
+
+              <Stack   fontFamily="Staatliches" >
+                  <Text letterSpacing={3} padding="2px">{hora}</Text>
               </Stack>
-              <Stack borderColor="black" borderWidth="1px ">
-                  <h2>{ minuto}</h2>
+             
+              <Stack  fontFamily="Staatliches">
+                  <Text letterSpacing={3} padding="2px">{minuto}</Text>
               </Stack>
-              <Stack borderColor="black" borderWidth="1px ">
-                  <h2>{segundo}</h2>
+              <Stack   fontFamily="Staatliches">
+                  <Text letterSpacing={3} padding="2px">{segundo}</Text>
               </Stack >
+
+              
                 </Stack>
+
         </React.Fragment>
     )
 }

@@ -5,8 +5,8 @@ import Logo from "../assets/logodeposito.svg"
 export default function Navbar() {
     return (
         <React.Fragment>
-            <Stack bg="green.500" minH="40px" direction="row" justify="space-around" >
-                    <Image src={Logo}/>
+            <Stack bg="gainsboro" minH="40px" direction="row" justify="space-around" p={2} align="center" >
+                    <Image src="https://blush.design/api/download?shareUri=PlSR9kjBIaV4J9YB&w=800&h=800&fm=png" maxH="10vh"  />
                 <Clock  />
             </Stack>
         </React.Fragment>
