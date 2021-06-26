@@ -1,7 +1,7 @@
 import React from 'react'
 import {Stack ,Image} from "@chakra-ui/react"
 import Clock from './Clock'
-import Logo from "../assets/logodeposito.svg"
+
 export default function Navbar() {
     return (
         <React.Fragment>
