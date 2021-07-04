@@ -4,14 +4,13 @@ import {NumberInput ,NumberInputField,NumberIncrementStepper,NumberDecrementStep
 export default function Count() {
     return (
         <div>
-             <NumberInput size="xs" maxW={16} defaultValue={15} min={10}>
+             <NumberInput size="xs" maxW={16} defaultValue={0} min={0}>
                 <NumberInputField />
                 <NumberInputStepper>
                   <NumberIncrementStepper />
                   <NumberDecrementStepper />
                 </NumberInputStepper>
-              </NumberInput>
-            
+              </NumberInput>            
         </div>
     )
 }
