@@ -11,7 +11,7 @@ export default function Entry() {
 
     return (
        <React.Fragment>          
-       {user.length? user.map(item=>  <Card  name={item.name} key={item.name}/>) : <Text >Cargar Moover</Text>}
+       {user.length? user.map(item=>  <Card  name={item.name} key={item.name}/>) : <Text>Cargar Moover</Text>}
        </React.Fragment>
     )
 }
