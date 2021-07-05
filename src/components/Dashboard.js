@@ -1,44 +1,45 @@
-import React from 'react'
-import {Stack ,Grid, GridItem , Text , SimpleGrid ,Box,VStack , StackDivider} from "@chakra-ui/react"
+import React from "react";
+import { Stack, Grid, Text, SimpleGrid, VStack } from "@chakra-ui/react";
 
-import Card from './Card'
-import Search from "./Search"
-import Entry from "./section/Entry"
+import Search from "./Search";
+import Entry from "./section/Entry";
+import Inside from "./section/Inside";
+import Exit from "./section/Exit";
 
 export default function Dashboard() {
-    return (
-        <React.Fragment>
-            <Stack bg="gainsboro" minH="100vh"  >
+  return (
+    <React.Fragment>
+      <Stack bg="gainsboro" minH="100vh">
+          
+        <Search />
 
-                   <Search/>                 
-                <SimpleGrid columns={3}>
-                    <Text  textAlign="center"  fontFamily="Staatliches" fontSize="xl">entry</Text>
-                    <Text  textAlign="center" fontFamily="Staatliches" fontSize="xl">Inside</Text>
-                    <Text  textAlign="center" fontFamily="Staatliches" fontSize="xl">Exit</Text>
-                </SimpleGrid>
+        <SimpleGrid columns={3}>
+          <Text textAlign="center" fontFamily="Staatliches" fontSize="xl">
+            entry
+          </Text>
+          <Text textAlign="center" fontFamily="Staatliches" fontSize="xl">
+            Inside
+          </Text>
+          <Text textAlign="center" fontFamily="Staatliches" fontSize="xl">
+            Exit
+          </Text>
+        </SimpleGrid>
 
-                <Grid templateColumns="repeat(3,1fr)"gap={4} h="100vh">
+        <Grid templateColumns="repeat(3,1fr)" gap={4} h="100vh">
+          <VStack bg="blue.500">
+            <Entry />
+          </VStack>
 
-                  
-                <GridItem bg="blue.500">
-               <Entry />
-                </GridItem>
+          <VStack bg="green.500">
+            <Inside />
+          </VStack>
 
-                <VStack bg="green.500" divider={<StackDivider   />}   >
-                <Card />                    
-                <Card />                    
-                <Card />                    
-                </VStack>
+          <VStack bg="yellow.500">
+            <Exit />
+          </VStack>
+        </Grid>
 
-                <GridItem bg="yellow.500"  >
-                <Card />  
-                  <Card />  
-                   <Card />                   
-                </GridItem>
-
-                </Grid>
-
-            </Stack>
-        </React.Fragment>
-    )
+      </Stack>
+    </React.Fragment>
+  );
 }
