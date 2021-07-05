@@ -3,7 +3,7 @@ import { Stack, Container, Text, Button, Heading } from "@chakra-ui/react";
 import {AiOutlineArrowRight } from "react-icons/ai"
 import Count from "./card/Count";
 
-export default function Card() {
+export default function Card({name}) {
   return (
     <React.Fragment>
       <Container
@@ -15,7 +15,7 @@ export default function Card() {
         borderRadius="lg"
       >
         <Stack>
-          <Heading size="md">Jose Bernardo</Heading>
+          <Heading size="md">{name}</Heading>
           <Stack direction="row" justify="space-around">
             <Stack>
               <Text size="sm">Charge</Text>
