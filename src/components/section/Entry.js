@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-
+import {Text} from "@chakra-ui/react"
 import Card from "../Card"
 import {UserContext} from "../../context/UserContext" 
 
@@ -11,7 +11,7 @@ export default function Entry() {
 
     return (
        <React.Fragment>          
-       {user.length? user.map(item=>  <Card  name={item.name} key={item.name}/>) : <h2>Cargar Moover</h2>}
+       {user.length? user.map(item=>  <Card  name={item.name} key={item.name}/>) : <Text >Cargar Moover</Text>}
        </React.Fragment>
     )
 }
