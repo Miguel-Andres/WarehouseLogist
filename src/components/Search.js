@@ -1,10 +1,12 @@
-import React, {  useState } from "react";
-import { Container, Input, InputGroup,  Button} from "@chakra-ui/react";
+import React, {  useState ,useContext} from "react";
+import { Container, Input, InputGroup,  Button,Badge} from "@chakra-ui/react";
+import {UserContext} from "../context/UserContext"
 
 export default function Search() {
 
     const [input, setInput] = useState("")
-    const [dato ,setDato]=useState("")
+    const [user ,setUser]=useContext(UserContext)
+    const [warning, setWarning] = useState(false)
   
    const handleChange=(e)=>{    
     setInput(e.target.value)  
@@ -12,22 +14,31 @@ export default function Search() {
 
    const enviar=(e)=>{    
       e.preventDefault()
-      setDato([...dato,{name:input}])   
-      setInput("")
+     if(input){
+        setUser([...user,{name:input}])  
+        setInput("") 
+       setWarning(false)
+     }else{
+      setWarning(true)
+      }
+     
    }
+
  
   return (
     <React.Fragment>
       <Container mb={3}>
-
         <form onSubmit={enviar}>       
         <InputGroup boxShadow="dark-lg">
           <Input type="text" placeholder="Nombre" bg="white" onChange={handleChange} name="name" value={input}/>
           <Button type="submit">Agrega</Button>
         </InputGroup> 
-        </form>
-        
+      {warning ? <Badge colorScheme="red" ml={2}  >User empty</Badge>:null}
+        </form> 
+         
+  
       </Container>
+   
     </React.Fragment>
   );
 }
