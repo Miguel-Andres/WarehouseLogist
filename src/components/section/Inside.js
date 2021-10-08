@@ -21,7 +21,7 @@ export default function Inside() {
 
   const backStep =(props)=>{
 
-    setUser([...user,{name:props.name,id:props.id}])
+    setUser([...user,{name:props.name,id:props.id , colorName : props.colorName}])
     setInside(inside.filter(item=> item.id !== props.id))
     
   }

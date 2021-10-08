@@ -23,7 +23,7 @@ export default function Dashboard() {
         <InsideProvider>
          <ExitProvider>
         <Grid templateColumns="repeat(3,1fr)" gap={4} h="100vh">
-          <VStack bg="blue.500">
+          <VStack bg="blue.500" >
             <Entry />
           </VStack>
           <VStack bg="green.500">
