@@ -31,7 +31,7 @@ export default function Search() {
       <Container mb={3}>
         <form onSubmit={enviar}>       
         <InputGroup boxShadow="dark-lg">
-          <Input type="text" placeholder="Nombre" bg="white" onChange={handleChange} name="name" value={input}/>
+          <Input type="text" placeholder="Nombre" bg="white" onChange={handleChange} name="name" value={input} autoFocus/>
           <Button type="submit">Agrega</Button>
         </InputGroup> 
       {warning ? <Badge colorScheme="red" ml={2}  >User empty</Badge>:null}
