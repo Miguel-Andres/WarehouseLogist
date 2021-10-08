@@ -14,8 +14,9 @@ export default function Search() {
 
    const enviar=(e)=>{    
       e.preventDefault()
-     if(input){
-        setUser([...user,{name:input}])  
+     if(input){    
+
+        setUser([...user,{name:input.replace(/^./, str => str.toUpperCase()) ,id: +new Date()  }])            
         setInput("") 
        setWarning(false)
      }else{
