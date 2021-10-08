@@ -16,7 +16,7 @@ export default function Search() {
       e.preventDefault()
      if(input){    
 
-        setUser([...user,{name:input.replace(/^./, str => str.toUpperCase()) ,id: +new Date()  }])            
+        setUser([...user,{name:input.replace(/^./, str => str.toUpperCase()) ,id: +new Date() ,colorName: "#" + ((1<<24)*Math.random() | 0).toString(16) }])            
         setInput("") 
        setWarning(false)
      }else{

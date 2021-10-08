@@ -14,7 +14,7 @@ export default function Inside() {
 
   const nextStep =(user)=>{
 
-      setExit([...exit,{name: user.name , id : user.id}])
+      setExit([...exit,{name: user.name , id : user.id , colorName : user.colorName}])
        setInside( inside.filter(item=> item.id !== user.id) )
 
   }

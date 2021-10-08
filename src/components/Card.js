@@ -5,7 +5,7 @@ import Count from "./card/Count";
 import ButtonSend from "./card/ButtonSend";
 import ButtonNext from "./card/ButtonNext";
 
-export default function Card({name , color ,isHiden,isDisabled,nextStep,backStep}) {
+export default function Card({name , color ,isHiden,isDisabled,nextStep,backStep,colorName}) {
   return (
     <React.Fragment>
       <Container
@@ -17,7 +17,7 @@ export default function Card({name , color ,isHiden,isDisabled,nextStep,backStep
         borderRadius="lg"
       >
         <Stack>
-          <Heading size="md" color={color} >{name}</Heading>
+          <Heading size="md" color={colorName} >{name}</Heading>
           <Stack direction="row" justify="space-around">
             <Stack>
               <Text size="sm">Charge</Text>
