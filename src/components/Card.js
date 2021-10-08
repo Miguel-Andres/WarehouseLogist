@@ -1,15 +1,17 @@
 import React from "react";
 
-import { Stack, Container, Text, Heading } from "@chakra-ui/react";
+import { Stack, Container, Text, Heading ,ScaleFade, } from "@chakra-ui/react";
 import Count from "./card/Count";
 import ButtonSend from "./card/ButtonSend";
 import ButtonNext from "./card/ButtonNext";
 
-export default function Card({name , color ,isHiden,isDisabled,nextStep,backStep,colorName}) {
+export default function Card({name  ,isHiden,isDisabled,nextStep,backStep,colorName}) {
   return (
     <React.Fragment>
+       <ScaleFade  initialScale={2}  in={true} > 
       <Container
         maxW="sm"
+        minW="sm"
         m="5px"
         bg="white"
         p={4}
@@ -45,6 +47,7 @@ export default function Card({name , color ,isHiden,isDisabled,nextStep,backStep
           </Stack>
         </Stack>
       </Container>
+      </ScaleFade>
     </React.Fragment>
   );
 }
