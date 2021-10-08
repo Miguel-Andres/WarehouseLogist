@@ -1,9 +1,11 @@
 import React from "react";
-import { Stack, Container, Text, Button, Heading } from "@chakra-ui/react";
-import {AiOutlineArrowRight } from "react-icons/ai"
-import Count from "./card/Count";
 
-export default function Card({name}) {
+import { Stack, Container, Text, Heading } from "@chakra-ui/react";
+import Count from "./card/Count";
+import ButtonSend from "./card/ButtonSend";
+import ButtonNext from "./card/ButtonNext";
+
+export default function Card({name , color ,isHiden,isDisabled,nextStep,backStep}) {
   return (
     <React.Fragment>
       <Container
@@ -15,7 +17,7 @@ export default function Card({name}) {
         borderRadius="lg"
       >
         <Stack>
-          <Heading size="md">{name}</Heading>
+          <Heading size="md" color={color} >{name}</Heading>
           <Stack direction="row" justify="space-around">
             <Stack>
               <Text size="sm">Charge</Text>
@@ -33,17 +35,13 @@ export default function Card({name}) {
             </Stack>
           </Stack>
 
-          <Stack direction="row" justify="space-between" spacing={4}>
-            <Button  variant="outline" borderColor="red">
-              Back
-            </Button>
-            <Button
-              rightIcon={<AiOutlineArrowRight />}
-              colorScheme="teal"
-              variant="outline"
-            >
-              Next
-            </Button>
+          <Stack direction="row" justify={isHiden?"center" :"space-between"} spacing={4}>
+
+            {isHiden 
+            ? <ButtonSend  />
+            : <ButtonNext nextStep={nextStep} backStep={backStep} isDisabled={isDisabled} />            
+            }
+
           </Stack>
         </Stack>
       </Container>
