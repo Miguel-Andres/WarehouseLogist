@@ -1,10 +1,15 @@
 import React from 'react'
 import {NumberInput ,NumberInputField,NumberIncrementStepper,NumberDecrementStepper,NumberInputStepper} from "@chakra-ui/react"
 
-export default function Count() {
+export default function Count(props) {
+
+const handleChange =(e)=>{
+  console.log(e.target.value)
+}
+
     return (
         <div>
-             <NumberInput size="xs" maxW={16} defaultValue={0} min={0}>
+             <NumberInput size="xs" maxW={16} defaultValue={0} min={0} >
                 <NumberInputField />
                 <NumberInputStepper>
                   <NumberIncrementStepper />

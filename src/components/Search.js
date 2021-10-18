@@ -14,11 +14,23 @@ export default function Search() {
 
    const enviar=(e)=>{    
       e.preventDefault()
+
+      
+
      if(input){    
 
-        setUser([...user,{name:input.replace(/^./, str => str.toUpperCase()) ,id: +new Date() ,colorName: "#" + ((1<<24)*Math.random() | 0).toString(16) }])            
-        setInput("") 
-       setWarning(false)
+        setUser([
+          ...user,
+          {
+            id: +new Date() ,
+            name:input.replace(/^./, str => str.toUpperCase()) ,
+            duration :  [new Date().getMinutes() , new Date().getSeconds() ]  ,
+            colorName: "#" + ((1<<24)*Math.random() | 0).toString(16), 
+
+           }])  
+           console.log(user)          
+        setInput("")  
+        setWarning(false)
      }else{
       setWarning(true)
       }

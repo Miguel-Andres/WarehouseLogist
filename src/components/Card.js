@@ -5,7 +5,13 @@ import Count from "./card/Count";
 import ButtonSend from "./card/ButtonSend";
 import ButtonNext from "./card/ButtonNext";
 
-export default function Card({name  ,isHiden,isDisabled,nextStep,backStep,colorName}) {
+
+export default function Card({name,isHiden,isDisabled,nextStep,backStep,colorName,handleChange,duration}) {
+  
+
+  
+ 
+
   return (
     <React.Fragment>
        <ScaleFade  initialScale={2}  in={true} > 
@@ -23,7 +29,7 @@ export default function Card({name  ,isHiden,isDisabled,nextStep,backStep,colorN
           <Stack direction="row" justify="space-around">
             <Stack>
               <Text size="sm">Charge</Text>
-              <Count />
+              <Count handleChange={handleChange}/>
             </Stack>
 
             <Stack>
@@ -33,7 +39,10 @@ export default function Card({name  ,isHiden,isDisabled,nextStep,backStep,colorN
 
             <Stack align="center">
               <Heading size="sm"> Duration </Heading>
-              <Text>30 </Text>
+              <Text size ="sm">
+                { new Date().getMinutes()-duration[0] <0 ? new Date().getMinutes()-duration[0]  * -1:  new Date().getMinutes()- duration[0]  }:
+                { new Date().getSeconds()-duration[1] <0 ? new Date().getSeconds()-duration[1]  * -1:  new Date().getSeconds()- duration[1]  } 
+               </Text>
             </Stack>
           </Stack>
 

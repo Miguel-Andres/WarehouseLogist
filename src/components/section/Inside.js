@@ -14,14 +14,25 @@ export default function Inside() {
 
   const nextStep =(user)=>{
 
-      setExit([...exit,{name: user.name , id : user.id , colorName : user.colorName}])
+      setExit([...exit,{
+        name: user.name ,
+        id : user.id ,
+        duration : user.duration ,
+        colorName : user.colorName ,
+      }])
        setInside( inside.filter(item=> item.id !== user.id) )
 
   }
 
   const backStep =(props)=>{
 
-    setUser([...user,{name:props.name,id:props.id , colorName : props.colorName}])
+    setUser([...user,{
+      name: props.name,
+      id: props.id ,
+      duration : props.duration ,
+      colorName : props.colorName ,
+    }])
+    
     setInside(inside.filter(item=> item.id !== props.id))
     
   }
