@@ -13,9 +13,7 @@ export default function Search() {
    } 
 
    const enviar=(e)=>{    
-      e.preventDefault()
-
-      
+      e.preventDefault()      
 
      if(input){    
 
