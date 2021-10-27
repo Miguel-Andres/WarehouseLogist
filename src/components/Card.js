@@ -1,15 +1,15 @@
 import React from "react";
 
-import { Stack, Container, Text, Heading ,ScaleFade, } from "@chakra-ui/react";
+import { Stack, Container, Text, Heading ,ScaleFade, CloseButton} from "@chakra-ui/react";
 import Count from "./card/Count";
 import ButtonSend from "./card/ButtonSend";
 import ButtonNext from "./card/ButtonNext";
 
 
-export default function Card({name,isHiden,isDisabled,nextStep,backStep,colorName,handleChange,duration}) {
-  
 
-  
+export default function Card({name,isHiden,isDisabled,nextStep,backStep,colorName,duration,chargin,handleChange,closeCard,handleChangeDischarge,dischargin ,handleSubmit}) { 
+
+ 
  
 
   return (
@@ -23,18 +23,24 @@ export default function Card({name,isHiden,isDisabled,nextStep,backStep,colorNam
         p={4}
         borderWidth="1px"
         borderRadius="lg"
-      >
-        <Stack>
-          <Heading size="md" color={colorName} >{name}</Heading>
+       >
+    
+        <Stack >
+          <Stack direction="row" justify="space-between">
+          <Heading size="md" color={colorName} >{name}  </Heading>
+         {isHiden?null:<CloseButton  onClick={closeCard}/> } 
+          </Stack>
+          
           <Stack direction="row" justify="space-around">
+
             <Stack>
               <Text size="sm">Charge</Text>
-              <Count handleChange={handleChange}/>
+              <Count  handleChange={handleChange}  count={chargin}   />
             </Stack>
 
             <Stack>
               <Text>discharge</Text>
-              <Count />
+              <Count  handleChange={handleChangeDischarge}  count={dischargin}/>
             </Stack>
 
             <Stack align="center">
@@ -49,7 +55,7 @@ export default function Card({name,isHiden,isDisabled,nextStep,backStep,colorNam
           <Stack direction="row" justify={isHiden?"center" :"space-between"} spacing={4}>
 
             {isHiden 
-            ? <ButtonSend  />
+            ? <ButtonSend  onClick={()=>handleSubmit()} />
             : <ButtonNext nextStep={nextStep} backStep={backStep} isDisabled={isDisabled} />            
             }
 
