@@ -15,9 +15,9 @@ import Titlemain from "./Titlemain";
 export default function Dashboard() {
   return (
     <React.Fragment>
-      <Grid templateColumns="repeat(3,1fr)"   bg="green.200">
+      <Grid templateColumns="repeat(3,1fr)"  bg="gainsboro" >
          <UserProvider > 
-           <GridItem colSpan={3}bg="blue.200" h="20" > 
+           <GridItem colSpan={3} h="20" > 
              <Search />
              <Titlemain />
            </GridItem>
@@ -26,7 +26,7 @@ export default function Dashboard() {
          <ExitProvider>
            <GridItem colSpan={3} >
 
-          <Grid  bg="yellow" gap={2}>
+          <Grid  gap={2}>
 
           <VStack bg="blue.500" minH="100vh" >
             <Entry />
