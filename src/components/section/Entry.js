@@ -1,5 +1,5 @@
 import React,{useContext, useState ,useEffect} from 'react'
-import {Text ,} from "@chakra-ui/react"
+import {Text ,Stack} from "@chakra-ui/react"
 import Card from "../Card"
 import {UserContext} from "../../context/UserContext" 
 import {InsideContext} from "../../context/InsideContext"
@@ -58,8 +58,8 @@ export default function Entry() {
     
   
     return (
-       <React.Fragment>          
+       <Stack  >          
        {user.length? user.map(item=><Card  key={item.id} {...item} handleChangeDischarge={handleChangeDischarge} handleChange={handleChange} isDisabled={isDisabled} nextStep={()=>nextStep(item)} closeCard={()=>closeCard(item)}  /> ) : <Text >Cargar moover</Text>}
-       </React.Fragment>
+       </Stack>
     )
 }

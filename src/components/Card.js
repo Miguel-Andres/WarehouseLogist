@@ -16,9 +16,8 @@ export default function Card({name,isHiden,isDisabled,nextStep,backStep,colorNam
     <React.Fragment>
        <ScaleFade  initialScale={2}  in={true} > 
       <Container
-        maxW="sm"
-        minW="sm"
-        m="5px"
+        
+        m="2px"
         bg="white"
         p={4}
         borderWidth="1px"
